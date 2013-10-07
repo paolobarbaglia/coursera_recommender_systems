@@ -1,4 +1,4 @@
-coursera_recommender_system
+Coursera Recommender system
 ===========================
 
 Git for Coursera Recommender System course
