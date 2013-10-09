@@ -17,7 +17,8 @@ public class sort_map {
      * @param <Double>
      * @return
      */
-    public static<Integer, Double extends Comparable<Double>> Map<Integer, Double> sortMapByValue(Map<Integer, Double> map) {
+    @SuppressWarnings("hiding")
+	public static<Integer, Double extends Comparable<Double>> Map<Integer, Double> sortMapByValue(Map<Integer, Double> map) {
         List<Map.Entry<Integer, Double>> list = new LinkedList<Map.Entry<Integer, Double>>(
                 map.entrySet());
         Collections.sort(list,

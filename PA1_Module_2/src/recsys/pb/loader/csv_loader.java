@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
+
 import recsys.pb.calculator.calculate_ratings;
 import recsys.pb.main.ratingsData;
 import recsys.pb.main.recsys_code_pa1;
@@ -25,7 +26,8 @@ public class csv_loader {
 	public static String  LoadDataAssociations(String strFilePath, Integer AssocId, Boolean Simple) throws FileNotFoundException {
 		
 		Map<java.lang.Integer, java.lang.Double> UserCompare = new TreeMap<java.lang.Integer, java.lang.Double>();
-        Collection<Integer> advUserCompare = new ArrayList<Integer>();
+        @SuppressWarnings("unused")
+		Collection<Integer> advUserCompare = new ArrayList<Integer>();
         Collection<ratingsData> UserRatings = new ArrayList<ratingsData>();
         String output = AssocId.toString() ;
         String adVoutput = AssocId.toString() ;
@@ -33,9 +35,11 @@ public class csv_loader {
         Integer xbarValue = 0;
 
         try {
-        	int ii=0;
+        	@SuppressWarnings("unused")
+			int ii=0;
         	//Read the input file and convert into
-            CSVReader reader = new CSVReader(new FileReader(strFilePath),',');
+            @SuppressWarnings("resource")
+			CSVReader reader = new CSVReader(new FileReader(strFilePath),',');
             String [] nextLine;
 
             while ((nextLine = reader.readNext()) != null) {
