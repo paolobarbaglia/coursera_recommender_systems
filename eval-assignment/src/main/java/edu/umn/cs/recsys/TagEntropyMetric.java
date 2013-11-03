@@ -13,7 +13,6 @@ import org.grouplens.lenskit.eval.metrics.topn.ItemSelectors;
 import org.grouplens.lenskit.eval.traintest.TestUser;
 import org.grouplens.lenskit.scored.ScoredId;
 import org.grouplens.lenskit.vectors.MutableSparseVector;
-import org.grouplens.lenskit.vectors.SparseVector;
 import org.grouplens.lenskit.vectors.VectorEntry;
 import org.grouplens.lenskit.vectors.VectorEntry.State;
 import org.slf4j.Logger;
@@ -26,8 +25,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 /**
  * A metric that measures the tag entropy of the recommended items.
@@ -80,7 +77,6 @@ public class TagEntropyMetric extends AbstractTestUserMetric {
         // per-user and global have the same fields, they just differ in aggregation.
         return columns;
     }
-
 
     private class TagEntropyAccumulator implements TestUserMetricAccumulator {
         private double totalEntropy = 0;
