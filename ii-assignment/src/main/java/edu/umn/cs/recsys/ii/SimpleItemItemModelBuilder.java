@@ -80,6 +80,10 @@ public class SimpleItemItemModelBuilder implements Provider<SimpleItemItemModel>
             for (UserHistory<Event> evt: stream) {
                 MutableSparseVector vector = RatingVectorUserHistorySummarizer.makeRatingVector(evt).mutableCopy();
                 // vector is now the user's rating vector
+                
+//                MutableSparseVector meanVector = MutableSparseVector.create(vector.keySet());
+//                meanVector.fill(vector.mean());
+//                vector.subtract(meanVector);
                 // TODO Normalize this vector and store the ratings in the item data
             }
         } finally {
